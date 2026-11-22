@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>John Gowelle: developer today, founder in progress</title>
+<meta name="description" content="John Gowelle is a software developer working in PHP, Laravel and Swift. He builds the tools he wishes existed, then shares them.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="John Gowelle: developer today, founder in progress">
+<meta property="og:description" content="PHP, Laravel and Swift. I build the tools I wish existed, then share them.">
+<meta property="og:url" content="https://gowelle.github.io/">
+<meta property="og:image" content="https://gowelle.github.io/images/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e1320'/%3E%3Crect x='12' y='34' width='10' height='18' rx='3' fill='%231b2336'/%3E%3Crect x='27' y='24' width='10' height='28' rx='3' fill='%23ff8a4c'/%3E%3Crect x='42' y='12' width='10' height='40' rx='3' fill='%23f0b23e'/%3E%3C/svg%3E">
+<style>
+@font-face { font-family: "Bricolage Grotesque"; src: url("fonts/BricolageGrotesque.ttf") format("truetype"); font-weight: 200 800; font-display: swap; }
+:root {
+  color-scheme: dark;
+  --bg: #0e1320; --panel: #151b2b; --panel-2: #1b2336; --line: #262f45; --line-strong: #4a5672;
+  --ink: #f1ece2; --muted: #aab4cc; --faint: #8792ad;
+  --a1: #ff8a4c; --a2: #f0b23e; --accent-text: #ffb27a; --on-accent: #1a1206; --ok: #5fd08a;
+  --display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: light) {
+  :root { color-scheme: light;
+    --bg: #f6f3ec; --panel: #ffffff; --panel-2: #ece7dc; --line: #ddd6c8; --line-strong: #9a917f;
+    --ink: #1a1a24; --muted: #4c5266; --faint: #6a7086;
+    --a1: #e8642a; --a2: #d99a1c; --accent-text: #b4470f; --ok: #1f8f50; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: var(--accent-text); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--a2); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+.grad { background: linear-gradient(90deg, var(--a1), var(--a2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+header.top { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+.name { font: 800 21px/1 var(--display); letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+header.top nav a { margin-left: 22px; font-size: 15px; font-weight: 600; color: var(--muted); text-decoration: none; }
+header.top nav a:hover { color: var(--ink); }
+
+.hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 40px; align-items: end; padding: 56px 0 72px; }
+.pill { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 22px; padding: 8px 14px; border-radius: 999px; background: var(--panel-2); font: 600 15px/1 var(--mono); color: var(--muted); }
+.pill i { width: 9px; height: 9px; border-radius: 50%; background: var(--ok); }
+h1 { margin: 0; font: 800 clamp(40px, 6.6vw, 74px)/0.98 var(--display); letter-spacing: -0.035em; }
+@media (min-width: 861px) { h1 .grad { white-space: nowrap; } }
+.progress { margin: 30px 0 0; width: min(520px, 100%); height: 12px; border-radius: 6px; background: var(--panel-2); overflow: hidden; }
+.progress i { display: block; width: 64%; height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--a1), var(--a2)); }
+.eta { margin: 14px 0 0; font: 500 15px/1.4 var(--mono); color: var(--faint); }
+.lede { margin: 30px 0 0; max-width: 36em; font-size: 19px; color: var(--muted); }
+.lede strong { color: var(--ink); font-weight: 600; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn { display: inline-block; padding: 12px 18px; border-radius: 12px; font: 600 15px/1 var(--sans); text-decoration: none; border: 1px solid var(--line-strong); color: var(--ink); background: var(--panel); }
+.btn:hover { border-color: var(--ink); }
+.btn.primary { border: 0; color: var(--on-accent); background: linear-gradient(90deg, var(--a1), var(--a2)); }
+.btn.primary:hover { filter: brightness(1.07); }
+.bars { display: flex; align-items: flex-end; justify-content: flex-end; gap: 14px; height: 320px; }
+.bars i { width: 40px; border-radius: 10px 10px 0 0; background: var(--panel-2); }
+.bars i.on { background: linear-gradient(var(--a1), var(--a2)); }
+.bars i.next { background: none; border: 3px dashed var(--line-strong); border-bottom: 0; }
+
+section { padding: 60px 0; border-top: 1px solid var(--line); }
+.kicker { margin: 0 0 10px; font: 600 14px/1 var(--mono); color: var(--accent-text); letter-spacing: 0.04em; }
+h2 { margin: 0 0 14px; font: 800 clamp(30px, 4.4vw, 44px)/1.05 var(--display); letter-spacing: -0.028em; }
+.sub { margin: 0 0 34px; max-width: 40em; color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+.card h3 { margin: 0 0 6px; font: 700 19px/1.25 var(--display); letter-spacing: -0.01em; }
+.card p { margin: 0; font-size: 15.5px; color: var(--muted); }
+.card .tag { display: inline-block; margin-bottom: 12px; font: 600 12.5px/1 var(--mono); color: var(--faint); letter-spacing: 0.06em; text-transform: uppercase; }
+
+.feature { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 40px; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 24px; padding: 36px; }
+.feature h3 { display: flex; align-items: center; gap: 12px; margin: 0 0 12px; font: 800 32px/1 var(--display); letter-spacing: -0.025em; }
+.feature h3 img { width: 40px; height: 40px; }
+.feature p { margin: 0 0 16px; color: var(--muted); }
+.feature ul { margin: 0 0 22px; padding-left: 20px; color: var(--muted); font-size: 16px; }
+.feature li { margin: 4px 0; }
+.shot { display: block; width: 100%; max-width: 280px; height: auto; margin: 0 auto; border-radius: 12px; border: 1px solid var(--line); box-shadow: 0 18px 44px rgba(0,0,0,.35); }
+
+.pkgs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.pkg { display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px; text-decoration: none; color: inherit; }
+.pkg:hover { border-color: var(--line-strong); }
+.pkg h3 { margin: 0 0 6px; font: 700 20px/1.2 var(--display); letter-spacing: -0.01em; color: var(--ink); }
+.pkg p { margin: 0 0 16px; font-size: 15.5px; color: var(--muted); flex: 1; }
+.pkg code { display: block; padding: 10px 12px; border-radius: 10px; background: var(--panel-2); font: 400 13px/1.4 var(--mono); color: var(--ink); overflow-x: auto; white-space: nowrap; }
+.pkg .meta { display: flex; gap: 8px; margin-top: 12px; min-height: 20px; }
+.pkg .meta img { height: 20px; }
+
+.beliefs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 40px; counter-reset: b; }
+.beliefs li { counter-increment: b; padding-left: 44px; position: relative; color: var(--muted); }
+.beliefs li::before { content: "0" counter(b); position: absolute; left: 0; top: 2px; font: 600 14px/1.6 var(--mono); color: var(--accent-text); }
+.beliefs strong { display: block; color: var(--ink); font: 700 18px/1.3 var(--display); }
+
+footer { border-top: 1px solid var(--line); padding: 30px 0 48px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 14px; color: var(--faint); }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; padding-top: 28px; }
+  .bars { display: none; }
+  .cards { grid-template-columns: 1fr; }
+  .feature { grid-template-columns: 1fr; padding: 26px; }
+  .pkgs, .beliefs { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .wrap { padding: 0 16px; }
+  header.top nav a:not(.keep) { display: none; }
+  section { padding: 44px 0; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="name" href="./">John Gowelle</a>
+    <nav>
+      <a href="#now">Now</a>
+      <a href="#paddock">Paddock</a>
+      <a href="#packages">Packages</a>
+      <a class="keep" href="https://github.com/gowelle">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <p class="pill"><i></i>works on my machine</p>
+        <h1>Developer today.<br><span class="grad">Founder in progress.</span></h1>
+        <div class="progress" role="img" aria-label="Progress: 64 percent"><i></i></div>
+        <p class="eta">64% done · estimated time remaining: two more weeks, as always</p>
+        <p class="lede">I'm John, a software developer working in <strong>PHP, Laravel and Swift</strong>. I build the tools I wish existed, then share them.</p>
+        <div class="actions">
+          <a class="btn primary" href="#packages">See what I've built</a>
+          <a class="btn" href="https://github.com/gowelle">GitHub</a>
+        </div>
+      </div>
+      <div class="bars" aria-hidden="true"><i style="height:70px"></i><i style="height:110px"></i><i style="height:150px"></i><i class="on" style="height:205px"></i><i class="on" style="height:260px"></i><i class="next" style="height:320px"></i></div>
+    </div>
+
+    <section id="now">
+      <p class="kicker">// now</p>
+      <h2>What I'm up to.</h2>
+      <div class="cards" style="margin-top:28px">
+        <div class="card"><span class="tag">Building</span><h3>Something new</h3><p>A product of my own, launching soon. I'll say more when it's real and not a moment before.</p></div>
+        <div class="card"><span class="tag">Shipping</span><h3>Paddock</h3><p>A local PHP environment for Intel Macs. Public, free, and updating itself on other people's computers.</p></div>
+        <div class="card"><span class="tag">Maintaining</span><h3>Six Laravel packages</h3><p>Payments, messaging, routing, moderation and SKUs. Used in other people's apps, so I answer the issues.</p></div>
+      </div>
+    </section>
+
+    <section id="paddock">
+      <p class="kicker">// featured</p>
+      <h2>The app I built because my Mac refused to retire.</h2>
+      <div class="feature" style="margin-top:28px">
+        <div>
+          <h3><img src="images/paddock.svg" alt="">Paddock</h3>
+          <p>A local PHP and Laravel environment for Intel Macs that works the moment it is installed. A native menu bar app, a background service and a command-line tool, written in Swift.</p>
+          <ul>
+            <li>Every project folder served at its own <code style="font-family:var(--mono);font-size:.9em">.test</code> address, with trusted HTTPS</li>
+            <li>PHP, databases, a mail catcher and Xdebug built in</li>
+            <li>Windows for mail, logs and dumps</li>
+            <li>One command to install, and it updates itself</li>
+          </ul>
+          <div class="actions" style="margin-top:0">
+            <a class="btn primary" href="https://gowelle.github.io/paddock/">Visit Paddock</a>
+            <a class="btn" href="https://github.com/gowelle/paddock">Source</a>
+          </div>
+        </div>
+        <picture>
+          <source srcset="images/menu-running-light.png" media="(prefers-color-scheme: light)">
+          <img class="shot" src="images/menu-running-dark.png" width="560" height="584" loading="lazy" alt="Paddock's menu in the menu bar: Running, Sites, PHP 8.5, Logs, Dumps, Stop, Settings, Check for Updates">
+        </picture>
+      </div>
+    </section>
+
+    <section id="packages">
+      <p class="kicker">// open packages</p>
+      <h2>Laravel packages.</h2>
+      <p class="sub">Each one exists because I needed it in a real project and didn't like what I found. All install with Composer.</p>
+      <div class="pkgs">
+        <a class="pkg" href="https://github.com/gowelle/flutterwave-php"><h3>flutterwave-php</h3><p>Flutterwave v4 payments, the Laravel way.</p><code>composer require gowelle/flutterwave-php</code><span class="meta"><img loading="lazy" alt="Latest version" src="https://img.shields.io/packagist/v/gowelle/flutterwave-php?label=version&color=777bb4"><img loading="lazy" alt="Installs" src="https://img.shields.io/packagist/dt/gowelle/flutterwave-php?label=installs&color=2f6659"></span></a>
+        <a class="pkg" href="https://github.com/gowelle/laravel-beem-africa"><h3>laravel-beem-africa</h3><p>Beem's SMS, OTP, airtime and payments behind one interface.</p><code>composer require gowelle/laravel-beem-africa</code><span class="meta"><img loading="lazy" alt="Latest version" src="https://img.shields.io/packagist/v/gowelle/laravel-beem-africa?label=version&color=777bb4"><img loading="lazy" alt="Installs" src="https://img.shields.io/packagist/dt/gowelle/laravel-beem-africa?label=installs&color=2f6659"></span></a>
+        <a class="pkg" href="https://github.com/gowelle/laravel-route-matrix"><h3>laravel-route-matrix</h3><p>Google Routes API: distances and routes without the boilerplate.</p><code>composer require gowelle/laravel-route-matrix</code><span class="meta"><img loading="lazy" alt="Latest version" src="https://img.shields.io/packagist/v/gowelle/laravel-route-matrix?label=version&color=777bb4"><img loading="lazy" alt="Installs" src="https://img.shields.io/packagist/dt/gowelle/laravel-route-matrix?label=installs&color=2f6659"></span></a>
+        <a class="pkg" href="https://github.com/gowelle/sku-generator"><h3>sku-generator</h3><p>Meaningful, unique SKUs for products and their variants.</p><code>composer require gowelle/sku-generator</code><span class="meta"><img loading="lazy" alt="Latest version" src="https://img.shields.io/packagist/v/gowelle/sku-generator?label=version&color=777bb4"><img loading="lazy" alt="Installs" src="https://img.shields.io/packagist/dt/gowelle/sku-generator?label=installs&color=2f6659"></span></a>
+        <a class="pkg" href="https://github.com/gowelle/azure-moderator"><h3>azure-moderator</h3><p>Content moderation with Azure AI Content Safety.</p><code>composer require gowelle/azure-moderator</code><span class="meta"><img loading="lazy" alt="Latest version" src="https://img.shields.io/packagist/v/gowelle/azure-moderator?label=version&color=777bb4"><img loading="lazy" alt="Installs" src="https://img.shields.io/packagist/dt/gowelle/azure-moderator?label=installs&color=2f6659"></span></a>
+        <a class="pkg" href="https://github.com/gowelle/google-moderator"><h3>google-moderator</h3><p>Text and image moderation with Google AI.</p><code>composer require gowelle/google-moderator</code><span class="meta"><img loading="lazy" alt="Latest version" src="https://img.shields.io/packagist/v/gowelle/google-moderator?label=version&color=777bb4"><img loading="lazy" alt="Installs" src="https://img.shields.io/packagist/dt/gowelle/google-moderator?label=installs&color=2f6659"></span></a>
+      </div>
+    </section>
+
+    <section id="beliefs">
+      <p class="kicker">// how I work</p>
+      <h2>Things I believe about software.</h2>
+      <ol class="beliefs" style="margin-top:28px">
+        <li><strong>It should work the moment you install it.</strong>Every set-up step is a place to lose someone.</li>
+        <li><strong>Tools for getting started should be free.</strong>Nobody should pay for the ground they stand on.</li>
+        <li><strong>Software shouldn't ask what it can find out.</strong>If the answer is on the machine, go and look.</li>
+        <li><strong>"Works on my machine" is where testing starts.</strong>It is not where it ends. I've checked.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 John Gowelle. Written by hand, deployed on a Friday.</span>
+    <span><a href="https://github.com/gowelle">github.com/gowelle</a></span>
+  </footer>
+</div>
+</body>
+</html>
