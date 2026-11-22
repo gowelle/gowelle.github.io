@@ -113,6 +113,8 @@ h2 { margin: 0 0 clamp(26px, 3.6vw, 48px); font: 800 clamp(40px, 6.6vw, 96px)/0.
 .beliefs li:last-child { border-bottom: 3px solid var(--rule); }
 .beliefs strong { font: 800 clamp(26px, 3.2vw, 44px)/1.02 var(--display); letter-spacing: 0; }
 .beliefs span { color: var(--mist); font-size: 17px; }
+.beliefs a { text-decoration: none; }
+.beliefs a:hover { text-decoration: underline; text-decoration-color: var(--signal); text-decoration-thickness: 3px; }
 
 footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 32px; padding-top: 28px; padding-bottom: 44px; border-top: 3px solid var(--rule); font-size: 16px; color: var(--mist); }
 
@@ -147,6 +149,7 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
     <a href="#now">Now</a>
     <a href="#paddock">Paddock</a>
     <a href="#packages">Packages</a>
+    <a href="#writing">Writing</a>
     <a class="keep" href="https://github.com/gowelle">GitHub</a>
   </nav>
 </header>
@@ -212,6 +215,15 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
     </ul>
   </section>
 
+  <section class="band part" id="writing">
+    <h2>Writing</h2>
+    <ul class="beliefs">
+      <li><strong><a href="https://medium.com/@chiefmfalme/my-intel-mac-was-left-behind-so-i-built-its-local-php-environment-myself-b7d1d0c562ab">My Intel Mac was left behind, so I built its local PHP environment myself</a></strong><span>Why I built Paddock, and how it works.</span></li>
+      <li><strong><a href="https://medium.com/@chiefmfalme/vuejs-support-for-legacy-browsers-laravel-bfce528baa33">Vue.js support for legacy browsers in Laravel</a></strong><span>Getting a modern front end to run where it wasn't meant to.</span></li>
+    </ul>
+    <p style="margin:28px 0 0"><a class="btn" href="https://medium.com/@chiefmfalme">Read more on Medium</a></p>
+  </section>
+
   <section class="band part" id="beliefs">
     <h2>What I believe about software</h2>
     <ul class="beliefs">
@@ -225,7 +237,7 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
 
 <footer class="band">
   <span>© 2026 John Gowelle. Written by hand, deployed on a Friday.</span>
-  <a href="https://github.com/gowelle">github.com/gowelle</a>
+  <span><a href="https://github.com/gowelle">GitHub</a> &nbsp; <a href="https://medium.com/@chiefmfalme">Medium</a></span>
 </footer>
 
 <script>
