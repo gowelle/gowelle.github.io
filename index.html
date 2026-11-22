@@ -77,7 +77,7 @@ h2 { margin: 0 0 clamp(26px, 3.6vw, 48px); font: 800 clamp(40px, 6.6vw, 96px)/0.
 .paper { background: var(--paper); color: var(--ink); border-top: 0; border-radius: clamp(24px, 4vw, 48px); margin: 0 clamp(8px, 1.2vw, 18px); padding-left: calc(var(--gutter) - clamp(8px, 1.2vw, 18px)); padding-right: calc(var(--gutter) - clamp(8px, 1.2vw, 18px)); }
 .paper + .part { border-top: 0; }
 .paddock { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 300px); gap: clamp(28px, 6vw, 96px); align-items: center; }
-.app { display: flex; align-items: center; gap: 16px; margin: 0 0 clamp(18px, 2.4vw, 30px); }
+.app { display: flex; align-items: center; gap: 14px; margin: 0 0 18px; }
 .app img { display: block; width: clamp(56px, 5.4vw, 76px); height: auto; }
 .app span { font: 800 clamp(30px, 3.4vw, 46px)/1 var(--display); }
 .paddock h2 { margin-bottom: 22px; }
@@ -179,7 +179,6 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
   <section class="band part paper" id="paddock">
     <div class="paddock">
       <div>
-        <p class="app"><img src="images/paddock.svg" width="72" height="72" alt="Paddock's icon: a paddock gate on a gold tile"><span>Paddock</span></p>
         <h2>The app I built because my Mac refused to retire</h2>
         <p class="measure">Paddock is a local PHP and Laravel environment for Intel Macs that works the moment it is installed: a native menu bar app, a background service and a command-line tool, written in Swift.</p>
         <ul class="measure">
@@ -193,7 +192,10 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
           <a class="btn" href="https://github.com/gowelle/paddock">Read the source</a>
         </div>
       </div>
-      <img class="shot" src="images/menu-running-light.png" width="560" height="584" loading="lazy" alt="Paddock's menu in the menu bar: Running, Sites, PHP 8.5, Logs, Dumps, Open Sites Folder, Stop, Settings, About Paddock, Check for Updates, Quit">
+      <div class="theapp">
+        <p class="app"><img src="images/paddock.svg" width="72" height="72" alt="Paddock's icon: a paddock gate on a gold tile"><span>Paddock</span></p>
+        <img class="shot" src="images/menu-running-light.png" width="560" height="584" loading="lazy" alt="Paddock's menu in the menu bar: Running, Sites, PHP 8.5, Logs, Dumps, Open Sites Folder, Stop, Settings, About Paddock, Check for Updates, Quit">
+      </div>
     </div>
   </section>
 
